@@ -1,0 +1,148 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+  color: #ffffff;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  padding: 4rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.analog-clock {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  box-shadow: 
+    inset 0 0 20px rgba(0,0,0,0.8),
+    0 0 0 10px #111,
+    0 0 0 12px #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-left: -1px;
+  transform-origin: 50% 0;
+}
+
+.marker:nth-child(3n) {
+  width: 4px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  margin-left: -2px;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand {
+  width: 8px;
+  height: 80px;
+  background: #ffffff;
+  margin-left: -4px;
+  z-index: 3;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 120px;
+  background: #a0a0a0;
+  margin-left: -2px;
+  z-index: 2;
+}
+
+.second-hand {
+  width: 2px;
+  height: 140px;
+  background: #ff3e3e;
+  margin-left: -1px;
+  z-index: 4;
+  transition: transform 0.1s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+  box-shadow: 0 0 8px rgba(255, 62, 62, 0.5);
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: #ff3e3e;
+  border-radius: 50%;
+  margin-top: -7px;
+  margin-left: -7px;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(255, 62, 62, 0.8);
+}
+
+.clock-info {
+  text-align: center;
+}
+
+.date-display {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.75rem;
+}
+
+.digital-time {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.location-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.location-display {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
